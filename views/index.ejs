@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT Turf</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SIT Turf</h1>
+            <p class="subtitle">Real-time HillBase Football Turf Status</p>
+        </header>
+
+        <main class="status-card">
+            <div class="status-indicator" id="statusIndicator"></div>
+            <div class="status-details">
+                <h2>Current Status</h2>
+                <p id="occupancyStatus">Checking status...</p>
+                <form action="/updateStatus" method="POST" id="statusForm" class="status-form">
+                    <div class="player-count">
+                        <label for="playerInput">Players on field:</label>
+                        <div class="counter">
+                            <button type="button" id="decreaseBtn">-</button>
+                            <input type="number" id="playerInput" name="playerCount" value="<%= playerCount %>" min="0">
+                            <button type="button" id="increaseBtn">+</button>
+                        </div>
+                    </div>
+                    <button type="submit" id="updateBtn" class="update-btn">Update Status</button>
+                </form>
+            </div>
+        </main>
+
+        <div class="last-updated">
+            <%= lastUpdated %>
+        </div>
+
+        <div class="coming-soon">
+            <h3>Coming Soon</h3>
+            <div class="features">
+                <span class="feature-tag">Basketball Court</span>
+                <span class="feature-tag">Gym Status</span>
+                <span class="feature-tag">Swimming Pool</span>
+                <span class="feature-tag">Tennis Court</span>
+            </div>
+        </div>
+
+        <footer class="footer">
+            Made By Sayantan Nandi (FY CSE Student)
+        </footer>
+    </div>
+    <script src="/scripts/main.js"></script>
+</body>
+</html>
